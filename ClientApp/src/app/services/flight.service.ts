@@ -12,7 +12,7 @@ import {FlightFlightNumberSearch} from "../models/flight-flight-number-search";
   providedIn: 'root'
 })
 
-export class FlightsService {
+export class FlightService {
   flightsUrl = 'http://localhost:8202/flights'
 
   constructor(private http: HttpClient) {}

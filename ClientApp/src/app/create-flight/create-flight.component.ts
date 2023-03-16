@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {FlightsService} from "../services/flights.service";
+import {FlightService} from "../services/flight.service";
 import { CreateFlight } from "../models/create-flight";
 
 @Component({
@@ -21,7 +21,7 @@ export class CreateFlightComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private flightsService: FlightsService
+    private flightsService: FlightService
   ) {
     this.flightNumberFormControl = new FormControl('', [
       Validators.required
@@ -74,7 +74,6 @@ export class CreateFlightComponent {
     flight.seatsAvailable = this.createFlightFormGroup.value.seatsAvailable;
     flight.seatCost = this.createFlightFormGroup.value.seatCost;
 
-    this.flightsService.createFlight(flight)
-      .subscribe();
+    this.flightsService.createFlight(flight);
   }
 }
