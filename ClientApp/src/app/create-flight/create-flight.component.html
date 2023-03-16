@@ -1,62 +1,113 @@
 <div class="page">
-  <h1> Create a flight </h1>
+  <section class="page-title-container">
+    <h1 class="page-title"> Add a flight </h1>
+  </section>
 
-  <form>
+  <form class="create-form" (ngSubmit)="createFlight()" [formGroup]="createFlightFormGroup">
     <p>
       <mat-form-field appearance="outline">
         <mat-label> Flight Number </mat-label>
-        <input matInput >
+        <input matInput [formControl]="flightNumberFormControl" name="flight-number">
         <mat-icon matSuffix>pin</mat-icon>
+        <mat-hint *ngIf="
+          flightNumberFormControl.hasError('required') &&
+          flightNumberFormControl.touched
+          ">
+            Enter a valid flight number.
+        </mat-hint>
       </mat-form-field>
     </p>
     <p>
       <mat-form-field appearance="outline">
         <mat-label> Origin </mat-label>
-        <input matInput >
+        <input matInput [formControl]="originFormControl" name="origin">
         <mat-icon matSuffix>flight_takeoff</mat-icon>
+        <mat-hint *ngIf="
+          originFormControl.hasError('required') &&
+          originFormControl.touched
+          ">
+          Enter a valid city.
+        </mat-hint>
       </mat-form-field>
     </p>
     <p>
       <mat-form-field appearance="outline">
         <mat-label> Destination </mat-label>
-        <input matInput >
+        <input matInput [formControl]="destinationFormControl" name="destination">
         <mat-icon matSuffix>flight_land</mat-icon>
+        <mat-hint *ngIf="
+          destinationFormControl.hasError('required') &&
+          destinationFormControl.touched
+          ">
+          Enter a valid city.
+        </mat-hint>
       </mat-form-field>
     </p>
     <p>
       <mat-form-field appearance="outline">
         <mat-label> Departure Time </mat-label>
-        <input matInput >
-        <mat-icon matSuffix>schedule</mat-icon>
+        <input matInput [matDatepicker]="departurePicker" [formControl]="departureTimeFormControl" name="departure-time" >
+        <mat-hint *ngIf="
+          departureTimeFormControl.hasError('required') &&
+          departureTimeFormControl.touched
+          ">
+          Enter a valid date.
+        </mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="departurePicker"></mat-datepicker-toggle>
+        <mat-datepicker #departurePicker disabled="false"></mat-datepicker>
       </mat-form-field>
     </p>
     <p>
       <mat-form-field appearance="outline">
         <mat-label> Arrival Time</mat-label>
-        <input matInput >
-        <mat-icon matSuffix>schedule</mat-icon>
+        <input matInput [matDatepicker]="arrivalPicker" [formControl]="arrivalTimeFormControl" name="arrival-time">
+        <mat-hint *ngIf="
+          arrivalTimeFormControl.hasError('required') &&
+          arrivalTimeFormControl.touched
+          ">
+          Enter a valid date.
+        </mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="arrivalPicker"></mat-datepicker-toggle>
+        <mat-datepicker #arrivalPicker disabled="false"></mat-datepicker>
       </mat-form-field>
     </p>
+
     <p>
       <mat-form-field appearance="outline">
         <mat-label> Seats Available </mat-label>
-        <input matInput >
+        <input matInput [formControl]="seatsAvailableFormControl" name="seats-available">
         <mat-icon matSuffix>airline_seat_recline_extra</mat-icon>
+        <mat-hint *ngIf="
+          seatsAvailableFormControl.hasError('required') &&
+          seatsAvailableFormControl.touched
+          ">
+          Enter a valid number.
+        </mat-hint>
       </mat-form-field>
     </p>
     <p>
       <mat-form-field appearance="outline">
         <mat-label> Seat Cost</mat-label>
-        <input matInput >
+        <input matInput [formControl]="seatCostFormControl" name="seat-cost">
         <mat-icon matSuffix>payments</mat-icon>
+        <mat-hint *ngIf="
+          seatCostFormControl.hasError('required') &&
+          seatCostFormControl.touched
+          ">
+          Enter a valid number.
+        </mat-hint>
       </mat-form-field>
     </p>
 
-    <button mat-raised-button color="primary">
-      <mat-icon>add</mat-icon>
-      Create Flight
-    </button>
+    <div id="submit-button-container">
+      <button mat-raised-button color="primary" type="submit" [disabled]="createFlightFormGroup.invalid">
+        <mat-icon>add</mat-icon>
+        Create Flight
+      </button>
+    </div>
   </form>
+
+  {{createFlightFormGroup.value | json}}
 </div>
 
 
