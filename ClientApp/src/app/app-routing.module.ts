@@ -11,8 +11,6 @@ const routes: Routes = [
   { path: 'create-flight', component: CreateFlightComponent},
   { path: 'customers', component: CustomersComponent},
   { path: 'create-customer', component: CustomersComponent},
-  { path: 'bookings', component: BookingsComponent},
-  { path: 'create-booking', component: BookingsComponent}
 ];
 
 @NgModule({

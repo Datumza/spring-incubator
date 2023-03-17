@@ -41,5 +41,26 @@ mat-hint{
   background-color: #ffffff;
 }
 
+.search-container{
+  width: fit-content;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+
+  background-color: #ffffff;
+}
+
+.search-container input{
+  outline: none;
+  border: none;
+}
+
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
