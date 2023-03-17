@@ -10,7 +10,7 @@ import { CreateFlight } from "../models/create-flight";
 })
 
 export class CreateFlightComponent {
-  createFlightFormGroup: FormGroup;
+  createFlightFormGroup!: FormGroup;
   flightNumberFormControl: FormControl;
   originFormControl: FormControl;
   destinationFormControl :FormControl;
@@ -52,8 +52,10 @@ export class CreateFlightComponent {
       Validators.required,
       Validators.min(0)
     ]);
+  }
 
-    this.createFlightFormGroup = formBuilder.group({
+  ngOnInit(): void{
+    this.createFlightFormGroup = this.formBuilder.group({
       flightNumber: this.flightNumberFormControl,
       origin: this.originFormControl,
       destination: this.destinationFormControl,
@@ -65,15 +67,7 @@ export class CreateFlightComponent {
   }
 
   createFlight(): void {
-    let flight: CreateFlight = new CreateFlight();
-    flight.flightNumber = this.createFlightFormGroup.value.flightNumber;
-    flight.origin = this.createFlightFormGroup.value.origin;
-    flight.destination = this.createFlightFormGroup.value.destination;
-    flight.departureTime = this.createFlightFormGroup.value.departureTime;
-    flight.arrivalTime = this.createFlightFormGroup.value.arrivalTime;
-    flight.seatsAvailable = this.createFlightFormGroup.value.seatsAvailable;
-    flight.seatCost = this.createFlightFormGroup.value.seatCost;
-
-    this.flightsService.createFlight(flight);
+    this.flightsService.createFlight(this.createFlightFormGroup.value).subscribe();
+    this.createFlightFormGroup.reset();
   }
 }

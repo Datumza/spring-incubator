@@ -23,7 +23,7 @@ export class CustomerService {
     return this.http.get<Customer[]>(this.customerUrl);
   }
 
-  createCustomer(customerToCreate: CreateCustomer): Observable<Customer> {
-    return this.http.post<Customer>(this.customerUrl, customerToCreate);
+  createCustomer(customerToCreate: any){
+    return this.http.post(this.customerUrl, customerToCreate);
   }
 }

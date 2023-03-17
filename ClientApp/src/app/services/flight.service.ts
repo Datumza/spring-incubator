@@ -41,7 +41,7 @@ export class FlightService {
     return this.http.post<Flight[]>(`${this.flightsUrl}/search`, searchBody);
   }
 
-  createFlight(flightToCreate: CreateFlight): Observable<Flight> {
-    return this.http.post<Flight>(this.flightsUrl, flightToCreate);
+  createFlight(flightToCreate: any) {
+    return this.http.post(this.flightsUrl, flightToCreate);
   }
 }
