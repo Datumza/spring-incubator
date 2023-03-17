@@ -11,6 +11,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from "@angular/material/core";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 
@@ -24,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import { FlightCreateBookingDialogComponent } from './flight-create-booking-dialog/flight-create-booking-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     CustomersComponent,
     BookingsComponent,
     CreateFlightComponent,
-    NavbarComponent
+    NavbarComponent,
+    FlightCreateBookingDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatToolbarModule,
     MatTabsModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -34,12 +34,12 @@
 
     <ng-container matColumnDef="departureTime">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Departure Time </th>
-      <td mat-cell *matCellDef="let element"> {{element.departureTime}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.departureTime | date: 'medium'}} </td>
     </ng-container>
 
     <ng-container matColumnDef="arrivalTime">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Arrival Time </th>
-      <td mat-cell *matCellDef="let element"> {{element.arrivalTime}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.arrivalTime | date: 'medium'}} </td>
     </ng-container>
 
     <ng-container matColumnDef="seatsAvailable">
@@ -49,13 +49,13 @@
 
     <ng-container matColumnDef="seatCost">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Seat Cost </th>
-      <td mat-cell *matCellDef="let element"> {{element.seatCost}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.seatCost | currency : 'R '}} </td>
     </ng-container>
 
     <ng-container matColumnDef="createBooking">
       <th mat-header-cell *matHeaderCellDef> Book Flight </th>
       <td mat-cell *matCellDef="let element">
-        <button mat-icon-button
+        <button mat-icon-button (click)="openBookingDialog()"
                 [routerLink]="['/flights', element]">
           <mat-icon matSuffix>airplane_ticket</mat-icon>
         </button>

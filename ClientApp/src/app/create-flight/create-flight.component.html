@@ -100,14 +100,12 @@
     </p>
 
     <div id="submit-button-container">
-      <button mat-raised-button color="primary" type="submit" [disabled]="createFlightFormGroup.invalid">
+      <button mat-raised-button color="primary" type="submit" [disabled]="createFlightFormGroup.invalid" >
         <mat-icon>add</mat-icon>
         Create Flight
       </button>
     </div>
   </form>
-
-  {{createFlightFormGroup.value | json}}
 </div>
 
 
