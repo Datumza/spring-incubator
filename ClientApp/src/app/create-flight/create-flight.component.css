@@ -1,0 +1,11 @@
+.create-form{
+  width: fit-content;
+  margin: 0 auto;
+}
+
+#submit-button-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

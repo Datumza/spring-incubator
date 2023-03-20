@@ -60,7 +60,8 @@ public class BookingsController {
         return new ResponseEntity<>(savedBooking, HttpStatus.CREATED);
     }
 
-    @GetMapping ResponseEntity<?> getBookings(){
+    @GetMapping
+    public ResponseEntity<?> getBookings(){
         LOGGER.info("Fetching all bookings");
         List<Booking> bookings = bookingsService.getBookings();
 

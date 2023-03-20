@@ -1,0 +1,10 @@
+mat-toolbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.button-container{
+  margin-left: auto;
+  margin-right: 20px;
+}

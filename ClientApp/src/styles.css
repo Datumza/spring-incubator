@@ -1,1 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  margin: 0;
+}
+
+.page{
+  min-width: 100%;
+  min-height: 100vh;
+
+  width: fit-content;
+  height: fit-content;
+
+  margin: 0;
+  padding: 15px;
+  padding-top: 70px;
+  box-sizing: border-box;
+
+  background-color: #EDEDE9;
+}
+
+.page-title-container{
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
+.page-title-container h1{
+  margin: 0;
+}
+
+mat-hint{
+  color: #ff0000;
+}
+
+.create-form{
+  padding: 30px 80px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+  background-color: #ffffff;
+}
+
+.search-container{
+  width: fit-content;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+
+  background-color: #ffffff;
+}
+
+.search-container input{
+  outline: none;
+  border: none;
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

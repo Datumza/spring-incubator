@@ -1,0 +1,14 @@
+<div mat-dialog-content>
+  <p> Create booking for flight *****. </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label> Passport Number </mat-label>
+      <input matInput [(ngModel)]="data.passportNumber">
+      <mat-icon matSuffix>book</mat-icon>
+    </mat-form-field>
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" color="primary"> Cancel </button>
+  <button mat-button [mat-dialog-close]="data.passportNumber" cdkFocusInitial mat-flat-button color="primary"> Book Flight </button>
+</div>
