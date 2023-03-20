@@ -1,0 +1,132 @@
+﻿.login-page-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-container,
+.right-container {
+    min-width: 300px;
+    min-height: 100vh;
+    width: 50%;
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+.login-page-container .left-container {
+    background-image: linear-gradient(45deg, #dcc2fe, #d7e2f3, #5fadfb, #615efa);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.login-page-container .right-container {
+    margin-left: auto;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.login-page-container .right-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-content-container {
+    min-width: 300px;
+    width: 60%;
+}
+
+/* *********** */
+form label {
+    color: #000000;
+    font-weight: bold;
+}
+form input[type=text] {
+    margin: 10px 0;
+    padding: 8px 15px;
+    border: 2px solid #87829f;
+    border-radius: 5px;
+    outline: none;
+    transition: ease-in 0.25s;
+}
+
+form input[type=text]:focus {
+    border: 2px solid #615efa;
+}
+
+form input[type=checkbox] {
+    cursor: pointer;
+}
+
+form input[type=submit] {
+    margin: 10px 0;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    
+    color: #ffffff;
+    background-image: linear-gradient(to right, #5fadfb, #615efa, #a091fd);
+    
+    cursor: pointer;
+    transition: cubic-bezier(0.65, 0.05, 0.36, 1) 1s;
+}
+
+form input[type=submit]:hover {
+    background-image: linear-gradient(to right, #4c8fd0, #4441b2, #6760a9);
+}
+
+.login-page-container form div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+#forgot-password-link {
+    margin-left: auto;
+    cursor: pointer;
+
+    background: linear-gradient(to right, #5fadfb, #615efa, #a091fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #ffffff;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid #87829f;
+}
+
+input[type="checkbox"]:checked {
+    background: linear-gradient(45deg, #5fadfb, #a091fd);
+    border: 0;
+}
+/******/
+
+.login-page-container h1,
+.login-page-container p,
+.login-page-container form label {
+    font-family: 'Rubik', sans-serif;
+}
+
+.login-page-container h1 {
+    margin: 0 0 15px 0;
+}
+
+.login-page-container p {
+    color: #87829f;
+    margin: 0 0 50px 0;
+}
+
+
+
