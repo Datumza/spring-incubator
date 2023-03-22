@@ -1,32 +1,27 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
 import '../css/flights.css'
-import airplane from '../assets/airplane-icon.png'
-import flying from '../assets/airplane-location-destination.png'
 import FlightComponent from "./FlightComponent";
-
-
-const steps = [
-    'Select a flight',
-    'Create an ad group',
-    'Create an ad',
-];
+import {useEffect, useState} from "react";
+import { getAllFlights } from "../Services/flight";
 
 export default function FlightsPage() {
-    return (
-        // <Box sx={{ width: '100%' }}>
-        //     <Stepper activeStep={1} alternativeLabel>
-        //         {steps.map((label) => (
-        //             <Step key={label}>
-        //                 <StepLabel>{label}</StepLabel>
-        //             </Step>
-        //         ))}
-        //     </Stepper>
-        // </Box>
+    const [flights, setFlights] = useState([])
 
-        <FlightComponent/>
+    useEffect(() => {
+        getAllFlights()
+            .then(flights => {
+                    setFlights(flights);
+                })
+    })
+
+    const flightObject = (flight, index) => {
+        return <FlightComponent flight={flight} key={index} />
+    }
+
+    const flightList = flights.map((user, index) => flightObject(user, index))
+
+    return (
+        <div className="content-container">
+            {flightList}
+        </div>
     );
 }
