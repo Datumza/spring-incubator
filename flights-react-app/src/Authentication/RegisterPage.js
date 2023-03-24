@@ -2,8 +2,9 @@
 import '../css/authentication.css'
 import {createCustomer} from "../Services/customer";
 import {useNavigate} from "react-router";
+import {saveToStorage} from "./StorageHandler";
 
-export default function RegisterPage() {
+export default function RegisterPage({setUser}) {
     const navigate = useNavigate();
     const  [customer, setCustomer] = useState({})
     const [firstName, setFirstName] = useState()
@@ -29,8 +30,9 @@ export default function RegisterPage() {
 
         createCustomer(customer)
             .then(response => {
-                console.log(response);
-                navigate('/')
+                saveToStorage('user', response);
+                setUser(response);
+                navigate('/');
             })
     }
 
