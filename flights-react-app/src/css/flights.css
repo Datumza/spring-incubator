@@ -1,0 +1,60 @@
+.flight-item {
+    min-width: fit-content;
+    width: 80%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin: 20px 40px;
+    padding: 20px 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
+
+    background: #ffffff;
+    transition: ease-in-out 0.2s;
+}
+
+.flight-item:hover {
+    background-color: #eeeeee;
+}
+
+#flight-logo {
+    width: 80px;
+    height: 80px;
+}
+
+.flight-item h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.5em;
+}
+
+.flight-item h2 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    color: #87829f;
+}
+
+.flight-item button {
+    height: fit-content;
+    margin: auto 0;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+
+    color: #ffffff;
+    background: #4441b2;
+
+    cursor: pointer;
+    transition: cubic-bezier(0.65, 0.05, 0.36, 1) 0.3s;
+}
+
+.flight-item button:hover {
+    background-color: #5f58d5;
+}
+
