@@ -6,6 +6,7 @@ import FlightsPage from "./Flights/FlightsPage";
 import TopNavbar from "./Navigation/TopNavbar.js";
 import {useState} from "react";
 import {getFromStorage} from "./Authentication/StorageHandler";
+import BookingsPage from "./Bookings/BookingsPage";
 
 function App() {
     const [user, setUser] = useState(getFromStorage('user'));
@@ -22,9 +23,9 @@ function App() {
                             </>
                         )}
                     >
-                        <Route exact path='/' element={< FlightsPage user={user}/>}></Route>
-                        <Route exact path='/flights' element={< FlightsPage user={user}/>}></Route>
-                        <Route exact path='/bookings' element={< RegisterPage/>}></Route>
+                        <Route exact path='/' element={< FlightsPage/>}></Route>
+                        <Route exact path='/flights' element={< FlightsPage/>}></Route>
+                        <Route exact path='/bookings' element={< BookingsPage/>}></Route>
                     </Route>
 
                     <Route exact path='/login' element={< LoginPage setUser={setUser}/>}></Route>

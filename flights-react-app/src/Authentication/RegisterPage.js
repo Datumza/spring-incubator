@@ -1,8 +1,9 @@
-﻿import { useState } from "react";
+﻿import {useEffect, useState} from "react";
 import '../css/authentication.css'
 import {createCustomer} from "../Services/customer";
 import {useNavigate} from "react-router";
 import {saveToStorage} from "./StorageHandler";
+import isLoggedIn from "./UserStateHandler";
 
 export default function RegisterPage({setUser}) {
     const navigate = useNavigate();
@@ -35,6 +36,12 @@ export default function RegisterPage({setUser}) {
                 navigate('/');
             })
     }
+
+    useEffect(() => {
+        if (isLoggedIn()){
+            navigate('/')
+        }
+    }, [navigate])
 
     return (
         <div className="login-page-container">

@@ -1,7 +1,6 @@
 import {AppBar, Avatar, Box, Button, Chip, IconButton, Toolbar, Typography} from '@mui/material';
-import FlightsPage from "../Flights/FlightsPage";
 import {formatAvatar, formatUsername} from "../Functions/format";
-import {deleteFromStorage, getFromStorage} from "../Authentication/StorageHandler";
+import {deleteFromStorage} from "../Authentication/StorageHandler";
 
 export default function TopNavbar({user}) {
     const signOut = () => {
@@ -35,7 +34,6 @@ export default function TopNavbar({user}) {
 
                 </Toolbar>
             </AppBar>
-            <FlightsPage/>
         </Box>
     );
 }

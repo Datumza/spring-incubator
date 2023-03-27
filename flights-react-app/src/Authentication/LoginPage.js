@@ -1,9 +1,10 @@
 ﻿import '../css/authentication.css'
 import {Link} from "react-router-dom";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {getCustomerByPassportNumber} from "../Services/customer";
 import {useNavigate} from "react-router";
 import {saveToStorage} from "./StorageHandler";
+import isLoggedIn from "./UserStateHandler";
 
 export default function LoginPage({setUser}) {
     const navigate = useNavigate()
@@ -27,6 +28,12 @@ export default function LoginPage({setUser}) {
                 }
             })
     }
+    
+    useEffect(() => {
+        if (isLoggedIn()){
+            navigate('/')
+        }
+    }, [navigate])
 
     return (
         <div className="login-page-container">

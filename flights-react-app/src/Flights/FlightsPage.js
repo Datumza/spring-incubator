@@ -1,8 +1,6 @@
-import '../css/flights.css'
 import FlightComponent from "./FlightComponent";
 import {useEffect, useState} from "react";
 import { getAllFlights } from "../Services/flight";
-import {getFromStorage} from "../Authentication/StorageHandler";
 import {useNavigate} from "react-router";
 import isLoggedIn from "../Authentication/UserStateHandler";
 
@@ -20,7 +18,7 @@ export default function FlightsPage() {
             .then(flights => {
                     setFlights(flights);
                 })
-    }, [])
+    }, [navigate])
 
     const flightObject = (flight, index) => {
         return <FlightComponent flight={flight} key={index} />
